@@ -48,3 +48,10 @@ export default tseslint.config({
   },
 })
 ```
+## 頻繁に使うコマンド
+
+### shadcnでコンポーネントを追加する
+
+```
+pnpm dlx shadcn@latest add {component name}
+```

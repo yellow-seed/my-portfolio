@@ -1,9 +1,8 @@
-import './App.css'
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import RestaurantImage from './assets/image_rastaurant.png';
 import BeautySalonImage from './assets/image_hairsalon.png';
 import RealEstateImage from './assets/image_estate.png';
+import "./App.css";
 
 function App() {
   const portfolios = [
@@ -28,37 +27,39 @@ function App() {
   ];
 
   return (
-    <div className='container mx-auto py-10 text-center'>
-      <h1 className='text-4xl font-bold mb-6'>My Portfolio</h1>
-      <p className='mb-6'>シンプルなLPを作成し、それぞれの業種向けにデザインしました。</p>
-
-      <section className='mb-12'>
-        <h2 className='text-3xl font-semibold mb-4'>About Me</h2>
-        <p className='max-w-2xl mx-auto text-gray-700'>
-          Web開発者として、ReactやViteを活用したモダンなウェブサイト制作を行っています。
-          フロントエンドの設計に強みがあり、特にLP制作においてデザインと機能性の両方を重視しています。
-        </p>
+    <>
+      <section id="hero" className="text-center py-32">
+        <h2 className="text-4xl font-bold text-black">My Portfolio</h2>
+        <p className="mt-2 text-[#7A6B5C]">IT IS A FREELANCE ENGINEER'S PORTFOLIO SITE.</p>
       </section>
-
-      <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
-        {portfolios.map((portfolio, index) => (
-          <Card key={index} className='p-6 shadow-lg rounded-xl overflow-hidden'>
-            <img src={portfolio.image} alt={portfolio.title} className='w-full h-48 object-cover' />
-            <CardContent className='p-4'>
-              <h2 className='text-xl font-semibold mb-2'>{portfolio.title}</h2>
-              <p className='mb-4 text-gray-600'>{portfolio.description}</p>
-              <Button asChild className='w-full'>
-                <a href={portfolio.link} target='_blank' rel='noopener noreferrer'>
-                  詳しく見る
-                </a>
-              </Button>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-    </div>
+      <section id="about" className="p-10 bg-white rounded-lg mx-4 mt-6 shadow-md">
+        <h2 className="text-3xl font-semibold">About Me</h2>
+        <p className="mt-2 text-[#7A6B5C]">ここに自己紹介を記述します。</p>
+      </section>
+      <section id="works" className="p-10 mx-4 mt-6">
+        <h2 className="text-3xl font-semibold">Works</h2>
+        <p className="mt-2 text-[#7A6B5C]">今後、実際の作品を追加予定です。</p>
+      </section>
+      <section id="samples" className="p-10 mx-4 mt-6">
+        <h2 className="text-3xl font-semibold">Samples</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+          {portfolios.map((portfolio, index) => (
+            <Card key={index} className="p-6 bg-white shadow-md rounded-lg text-[#7A6B5C]">
+              <img src={portfolio.image} alt={portfolio.title} className="portfolio-image" />
+              <CardContent className="p-4">
+                <h3 className="text-xl font-medium text-gray-900">{portfolio.title}</h3>
+                <p className="text-gray-600 mt-2">{portfolio.description}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+      <section id="contact" className="p-10 bg-white mx-4 mt-6 text-center shadow-md rounded-lg">
+        <h2 className="text-3xl font-semibold">Contact</h2>
+        <p className="mt-2 text-[#7A6B5C]">お問い合わせはこちら</p>
+      </section>
+    </>
   );
 }
 
-
-export default App
+export default App;

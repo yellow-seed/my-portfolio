@@ -1,35 +1,65 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Card, CardContent } from "@/components/ui/card";
+import RestaurantImage from './assets/image_rastaurant.png';
+import BeautySalonImage from './assets/image_hairsalon.png';
+import RealEstateImage from './assets/image_estate.png';
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const portfolios = [
+    {
+      title: "飲食店向けLP",
+      description: "飲食店の魅力を伝えるランディングページ。",
+      link: "https://yourgithub.io/restaurant-lp",
+      image: RestaurantImage
+    },
+    {
+      title: "美容サロン向けLP",
+      description: "美容サロンの予約促進に特化したLP。",
+      link: "https://yourgithub.io/beauty-salon-lp",
+      image: BeautySalonImage
+    },
+    {
+      title: "不動産物件向けLP",
+      description: "物件情報を魅力的に見せるLP。",
+      link: "https://yourgithub.io/real-estate-lp",
+      image: RealEstateImage
+    },
+  ];
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <section id="hero" className="text-center py-32">
+        <h2 className="text-4xl font-bold text-black">My Portfolio</h2>
+        <p className="mt-2 text-[#7A6B5C]">IT IS A FREELANCE ENGINEER'S PORTFOLIO SITE.</p>
+      </section>
+      <section id="about" className="p-10 bg-white rounded-lg mx-4 mt-6 shadow-md">
+        <h2 className="text-3xl font-semibold">About Me</h2>
+        <p className="mt-2 text-[#7A6B5C]">ここに自己紹介を記述します。</p>
+      </section>
+      <section id="works" className="p-10 mx-4 mt-6">
+        <h2 className="text-3xl font-semibold">Works</h2>
+        <p className="mt-2 text-[#7A6B5C]">今後、実際の作品を追加予定です。</p>
+      </section>
+      <section id="samples" className="p-10 mx-4 mt-6">
+        <h2 className="text-3xl font-semibold">Samples</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+          {portfolios.map((portfolio, index) => (
+            <Card key={index} className="p-6 bg-white shadow-md rounded-lg text-[#7A6B5C]">
+              <img src={portfolio.image} alt={portfolio.title} className="portfolio-image" />
+              <CardContent className="p-4">
+                <h3 className="text-xl font-medium text-gray-900">{portfolio.title}</h3>
+                <p className="text-gray-600 mt-2">{portfolio.description}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+      <section id="contact" className="p-10 bg-white mx-4 mt-6 text-center shadow-md rounded-lg">
+        <h2 className="text-3xl font-semibold">Contact</h2>
+        <p className="mt-2 text-[#7A6B5C]">お問い合わせはこちら</p>
+      </section>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

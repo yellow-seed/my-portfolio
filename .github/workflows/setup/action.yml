@@ -12,3 +12,4 @@ runs:
 
     - name: Install dependencies
       run: pnpm i --frozen-lockfile
+      shell: bash

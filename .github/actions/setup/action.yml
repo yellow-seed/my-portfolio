@@ -1,0 +1,20 @@
+name: Setup
+description: パッケージのインストール処理を共通化
+
+runs:
+  using: composite
+  steps:
+    - name: Set up Node.js
+      uses: actions/setup-node@1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a
+      with:
+        node-version: '23.x'
+
+    - name: Enable Corepack and prepare pnpm
+      shell: bash
+      run: |
+        corepack enable
+        corepack prepare pnpm@$(node -p "require('./package.json').packageManager.replace(/^pnpm@/, '')") --activate
+
+    - name: Install dependencies
+      run: pnpm i --frozen-lockfile
+      shell: bash

@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches-ignore:
+      - main
+
+permissions: {}
+
+defaults:
+  run:
+    shell: bash
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ci:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+
+      - name: Setup
+        uses: ./.github/actions/setup
+
+      - name: Build with Vite
+        run: pnpm run build

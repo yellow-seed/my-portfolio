@@ -1,11 +1,6 @@
-import { Link } from "react-router-dom";
-
 function RestaurantLP() {
   return (
     <div className="p-8">
-      <Link to="/" className="text-blue-600 hover:underline mb-4 inline-block">
-        ← ホームに戻る
-      </Link>
       <h1 className="text-3xl font-bold mb-6">飲食店向けLP</h1>
       <div className="bg-white p-6 rounded-lg shadow-md">
         <h2 className="text-2xl font-semibold mb-4">概要</h2>

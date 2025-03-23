@@ -1,3 +1,4 @@
+import React from "react";
 import SampleLayoutHeader from "../headers/SampleLayoutHeader";
 
 interface SampleLayoutProps {

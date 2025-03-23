@@ -2,6 +2,11 @@ import { createPortal } from 'react-dom'
 import { Link } from "react-router-dom";
 
 function SampleLayoutHeader() {
+  const headerElement = document.getElementById('header')
+  if (!headerElement) {
+    return null
+  }
+  
   return createPortal(
     <>
       <h1 className="text-2xl font-bold">サンプルサイト</h1>

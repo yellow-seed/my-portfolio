@@ -15,6 +15,105 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Claude-inspired Design System - CSS Variables */
+  /* Primary Colors */
+  --color-primary-50: #FFF8F5;
+  --color-primary-100: #FFEDE5;
+  --color-primary-200: #FFD6C2;
+  --color-primary-300: #FFB899;
+  --color-primary-400: #FF9B70;
+  --color-primary-500: #F97316;
+  --color-primary-600: #E86A13;
+  --color-primary-700: #C85910;
+  --color-primary-800: #A0470D;
+  --color-primary-900: #7A350A;
+
+  /* Secondary Colors */
+  --color-secondary-50: #FEF7F4;
+  --color-secondary-100: #FDEEE7;
+  --color-secondary-200: #FAD5C5;
+  --color-secondary-300: #F7BBA3;
+  --color-secondary-400: #F4A281;
+  --color-secondary-500: #E8825E;
+  --color-secondary-600: #D66B4A;
+  --color-secondary-700: #B85A3D;
+  --color-secondary-800: #944831;
+  --color-secondary-900: #703627;
+
+  /* Neutral Colors */
+  --color-neutral-50: #FAFAF9;
+  --color-neutral-100: #F5F5F4;
+  --color-neutral-200: #E7E5E4;
+  --color-neutral-300: #D6D3D1;
+  --color-neutral-400: #A8A29E;
+  --color-neutral-500: #78716C;
+  --color-neutral-600: #57534E;
+  --color-neutral-700: #44403C;
+  --color-neutral-800: #292524;
+  --color-neutral-900: #1C1917;
+
+  /* Accent Colors */
+  --color-accent-50: #F0F9FF;
+  --color-accent-100: #E0F2FE;
+  --color-accent-200: #BAE6FD;
+  --color-accent-300: #7DD3FC;
+  --color-accent-400: #38BDF8;
+  --color-accent-500: #0EA5E9;
+  --color-accent-600: #0284C7;
+  --color-accent-700: #0369A1;
+  --color-accent-800: #075985;
+  --color-accent-900: #0C4A6E;
+
+  /* Semantic Colors */
+  --color-brand: #F97316;
+  --color-brand-hover: #E86A13;
+  --color-brand-active: #C85910;
+
+  /* Background Colors */
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #FAFAF9;
+  --color-bg-tertiary: #F5F5F4;
+  --color-bg-elevated: #FFFFFF;
+
+  /* Text Colors */
+  --color-text-primary: #1C1917;
+  --color-text-secondary: #57534E;
+  --color-text-tertiary: #78716C;
+  --color-text-inverse: #FFFFFF;
+  --color-text-link: #F97316;
+
+  /* Border Colors */
+  --color-border-light: #E7E5E4;
+  --color-border-default: #D6D3D1;
+  --color-border-dark: #A8A29E;
+
+  /* Shadcn UI compatibility */
+  --background: 0 0% 100%;
+  --foreground: 20 14.3% 4.1%;
+  --card: 0 0% 100%;
+  --card-foreground: 20 14.3% 4.1%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 20 14.3% 4.1%;
+  --primary: 24 95% 53%;
+  --primary-foreground: 60 9.1% 97.8%;
+  --secondary: 60 4.8% 95.9%;
+  --secondary-foreground: 24 9.8% 10%;
+  --muted: 60 4.8% 95.9%;
+  --muted-foreground: 25 5.3% 44.7%;
+  --accent: 60 4.8% 95.9%;
+  --accent-foreground: 24 9.8% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --border: 20 5.9% 90%;
+  --input: 20 5.9% 90%;
+  --ring: 24 95% 53%;
+  --radius: 0.5rem;
+  --chart-1: 12 76% 61%;
+  --chart-2: 173 58% 39%;
+  --chart-3: 197 37% 24%;
+  --chart-4: 43 74% 66%;
+  --chart-5: 27 87% 67%;
 }
 
 a {
@@ -30,17 +129,17 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #ECEDE8;
-  color: black;
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-primary);
 }
 
 header {
-  background-color: #ECEDE8;
+  background-color: var(--color-bg-elevated);
   padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #B0B0B0; /* gray-400 */
+  border-bottom: 1px solid var(--color-border-light);
 }
 
 h1 {

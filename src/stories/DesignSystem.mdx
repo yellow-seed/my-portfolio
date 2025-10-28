@@ -1,0 +1,228 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/blocks';
+
+<Meta title="Design System/Overview" />
+
+# Claude-Inspired Design System
+
+This design system is inspired by Claude's warm and welcoming brand identity, featuring a carefully crafted color palette that emphasizes approachability and clarity.
+
+## Philosophy
+
+The color palette is built around three core principles:
+
+1. **Warmth & Approachability**: Using orange and coral tones to create an inviting experience
+2. **Clarity & Hierarchy**: Neutral tones that provide clear visual hierarchy
+3. **Accessibility**: All color combinations meet WCAG 2.1 AA standards
+
+## Color Palette
+
+### Primary Colors
+
+The primary color is Claude's signature warm orange - perfect for call-to-action buttons, links, and brand elements.
+
+<ColorPalette>
+  <ColorItem
+    title="Primary"
+    subtitle="Brand orange"
+    colors={{
+      50: '#FFF8F5',
+      100: '#FFEDE5',
+      200: '#FFD6C2',
+      300: '#FFB899',
+      400: '#FF9B70',
+      500: '#F97316',
+      600: '#E86A13',
+      700: '#C85910',
+      800: '#A0470D',
+      900: '#7A350A',
+    }}
+  />
+</ColorPalette>
+
+### Secondary Colors
+
+Soft coral and peach tones that complement the primary color beautifully.
+
+<ColorPalette>
+  <ColorItem
+    title="Secondary"
+    subtitle="Coral/Peach"
+    colors={{
+      50: '#FEF7F4',
+      100: '#FDEEE7',
+      200: '#FAD5C5',
+      300: '#F7BBA3',
+      400: '#F4A281',
+      500: '#E8825E',
+      600: '#D66B4A',
+      700: '#B85A3D',
+      800: '#944831',
+      900: '#703627',
+    }}
+  />
+</ColorPalette>
+
+### Neutral Colors
+
+Warm grays that provide a solid foundation for text, borders, and backgrounds.
+
+<ColorPalette>
+  <ColorItem
+    title="Neutral"
+    subtitle="Warm grays"
+    colors={{
+      50: '#FAFAF9',
+      100: '#F5F5F4',
+      200: '#E7E5E4',
+      300: '#D6D3D1',
+      400: '#A8A29E',
+      500: '#78716C',
+      600: '#57534E',
+      700: '#44403C',
+      800: '#292524',
+      900: '#1C1917',
+    }}
+  />
+</ColorPalette>
+
+### Accent Colors
+
+Complementary blue tones for links and secondary actions.
+
+<ColorPalette>
+  <ColorItem
+    title="Accent"
+    subtitle="Blue"
+    colors={{
+      50: '#F0F9FF',
+      100: '#E0F2FE',
+      200: '#BAE6FD',
+      300: '#7DD3FC',
+      400: '#38BDF8',
+      500: '#0EA5E9',
+      600: '#0284C7',
+      700: '#0369A1',
+      800: '#075985',
+      900: '#0C4A6E',
+    }}
+  />
+</ColorPalette>
+
+### Semantic Colors
+
+#### Success
+<ColorPalette>
+  <ColorItem
+    title="Success"
+    subtitle="Green"
+    colors={{
+      500: '#22C55E',
+      600: '#16A34A',
+    }}
+  />
+</ColorPalette>
+
+#### Warning
+<ColorPalette>
+  <ColorItem
+    title="Warning"
+    subtitle="Amber"
+    colors={{
+      500: '#F59E0B',
+      600: '#D97706',
+    }}
+  />
+</ColorPalette>
+
+#### Error
+<ColorPalette>
+  <ColorItem
+    title="Error"
+    subtitle="Red"
+    colors={{
+      500: '#EF4444',
+      600: '#DC2626',
+    }}
+  />
+</ColorPalette>
+
+## Usage Guidelines
+
+### Tailwind CSS Classes
+
+All colors are available as Tailwind utility classes:
+
+```tsx
+// Backgrounds
+<div className="bg-primary-500">Primary background</div>
+<div className="bg-neutral-100">Light background</div>
+
+// Text
+<h1 className="text-neutral-900">Heading</h1>
+<p className="text-neutral-600">Body text</p>
+
+// Borders
+<div className="border border-neutral-200">Card</div>
+<div className="border-2 border-primary-500">Highlighted</div>
+
+// Hover states
+<button className="bg-primary-500 hover:bg-primary-600">
+  Button
+</button>
+```
+
+### CSS Variables
+
+For more flexibility, use CSS variables:
+
+```css
+.custom-element {
+  background-color: var(--color-primary-500);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-default);
+}
+```
+
+### TypeScript
+
+Import colors programmatically:
+
+```typescript
+import { colors, semanticColors } from '@/design-system/colors';
+
+const brandColor = colors.primary[500]; // "#F97316"
+const textColor = semanticColors.text; // "#1C1917"
+```
+
+## Best Practices
+
+### Do ✅
+
+- Use primary-500 for main call-to-action buttons
+- Use neutral scale for text hierarchy (900 for headings, 600 for body)
+- Apply hover states by darkening colors 1-2 shades
+- Use semantic colors (success/warning/error) for status indicators
+
+### Don't ❌
+
+- Don't use bright colors for large background areas
+- Don't mix adjacent color shades in the same component
+- Don't use primary color directly for body text
+- Don't forget to test color contrast for accessibility
+
+## Figma Integration
+
+This design system can be easily integrated with Figma:
+
+1. **CSS Variables**: Import directly into Figma styles
+2. **Design Tokens**: Use with Tokens Studio plugin
+3. **Color Palette**: Copy hex values for Figma color libraries
+
+## Components
+
+Explore the component library to see the design system in action:
+
+- [Button](?path=/docs/components-button--docs)
+- [Card](?path=/docs/components-card--docs)
+- [Input](?path=/docs/components-input--docs)
+- [Badge](?path=/docs/components-badge--docs)

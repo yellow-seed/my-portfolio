@@ -4,8 +4,9 @@ on:
   push:
     branches:
       - main
-      - feat/design_system
   pull_request:
+    branches:
+      - main
 
 permissions:
   contents: read
@@ -35,6 +36,7 @@ jobs:
         run: pnpm run build-storybook
 
       - name: Upload artifact
+        if: github.ref == 'refs/heads/main'
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./storybook-static
@@ -42,7 +44,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     steps:
       - name: Deploy to GitHub Pages
         id: deployment

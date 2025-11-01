@@ -99,6 +99,7 @@ export const Disabled: Story = {
 export const WithValue: Story = {
   args: {
     value: 'Hello World',
+    readOnly: true,
   },
 };
 
@@ -109,16 +110,16 @@ export const FormExample: Story = {
   render: () => (
     <div className="w-[400px] space-y-4">
       <div className="space-y-2">
-        <label className="text-sm font-medium text-neutral-900">Name</label>
-        <Input placeholder="John Doe" />
+        <label htmlFor="name" className="text-sm font-medium text-neutral-900">Name</label>
+        <Input id="name" placeholder="John Doe" />
       </div>
       <div className="space-y-2">
-        <label className="text-sm font-medium text-neutral-900">Email</label>
-        <Input type="email" placeholder="john@example.com" />
+        <label htmlFor="email" className="text-sm font-medium text-neutral-900">Email</label>
+        <Input id="email" type="email" placeholder="john@example.com" />
       </div>
       <div className="space-y-2">
-        <label className="text-sm font-medium text-neutral-900">Password</label>
-        <Input type="password" placeholder="••••••••" />
+        <label htmlFor="password" className="text-sm font-medium text-neutral-900">Password</label>
+        <Input id="password" type="password" placeholder="••••••••" />
       </div>
     </div>
   ),

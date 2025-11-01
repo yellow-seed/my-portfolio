@@ -66,9 +66,9 @@ export const Warning: Story = {
 };
 
 /**
- * Error badge
+ * Error variant badge
  */
-export const Error: Story = {
+export const ErrorVariant: Story = {
   args: {
     children: 'Error',
     variant: 'error',

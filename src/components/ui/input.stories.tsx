@@ -66,7 +66,7 @@ export const Password: Story = {
 /**
  * Number input
  */
-export const Number: Story = {
+export const NumberInput: Story = {
   args: {
     type: 'number',
     placeholder: '0',
@@ -99,6 +99,7 @@ export const Disabled: Story = {
 export const WithValue: Story = {
   args: {
     value: 'Hello World',
+    readOnly: true,
   },
 };
 

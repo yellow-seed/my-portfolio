@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Input } from './input';
 
 /**
@@ -110,16 +110,16 @@ export const FormExample: Story = {
   render: () => (
     <div className="w-[400px] space-y-4">
       <div className="space-y-2">
-        <label className="text-sm font-medium text-neutral-900">Name</label>
-        <Input placeholder="John Doe" />
+        <label htmlFor="name-input" className="text-sm font-medium text-neutral-900">Name</label>
+        <Input id="name-input" placeholder="John Doe" />
       </div>
       <div className="space-y-2">
-        <label className="text-sm font-medium text-neutral-900">Email</label>
-        <Input type="email" placeholder="john@example.com" />
+        <label htmlFor="email-input" className="text-sm font-medium text-neutral-900">Email</label>
+        <Input id="email-input" type="email" placeholder="john@example.com" />
       </div>
       <div className="space-y-2">
-        <label className="text-sm font-medium text-neutral-900">Password</label>
-        <Input type="password" placeholder="••••••••" />
+        <label htmlFor="password-input" className="text-sm font-medium text-neutral-900">Password</label>
+        <Input id="password-input" type="password" placeholder="••••••••" />
       </div>
     </div>
   ),

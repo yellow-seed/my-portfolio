@@ -25,6 +25,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    env:
+      # Disable Storybook telemetry to prevent connections to storybook.js.org
+      # which may be blocked by firewall rules in GitHub Actions
+      STORYBOOK_DISABLE_TELEMETRY: true
+      CI: true
     steps:
       - name: Checkout code
         uses: actions/checkout@v5

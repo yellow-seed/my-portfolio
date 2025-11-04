@@ -34,7 +34,7 @@ function Home() {
         <h2 className="text-4xl font-bold text-neutral-900 mb-4">My Portfolio</h2>
         <p className="text-lg text-neutral-600 mb-2">あなたのビジネスを加速させる</p>
         <p className="text-2xl font-semibold text-primary-500 mb-8">魅力的なWebサイトを作ります</p>
-        <div className="flex gap-4 justify-center mt-8">
+        <div className="flex gap-4 justify-center">
           <Button 
             size="lg"
             onClick={() => document.getElementById('samples')?.scrollIntoView({ behavior: 'smooth' })}

@@ -6,6 +6,8 @@ on:
 jobs:
   copilot-setup-steps:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
     - name: Checkout code

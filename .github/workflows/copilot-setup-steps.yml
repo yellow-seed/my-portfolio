@@ -1,0 +1,29 @@
+name: Copilot Setup Steps
+
+on:
+  workflow_dispatch:
+
+jobs:
+  copilot-setup-steps:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup
+      uses: ./.github/actions/setup
+
+    - name: Display Node.js version
+      run: node --version
+
+    - name: Display pnpm version
+      run: pnpm --version
+
+    - name: List installed packages
+      run: pnpm list --depth=0
+
+    - name: Setup complete
+      run: echo "Development environment setup complete for GitHub Copilot"

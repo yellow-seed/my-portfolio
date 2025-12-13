@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import RestaurantImage from '../assets/image_rastaurant.png';
 import BeautySalonImage from '../assets/image_hairsalon.png';
@@ -27,11 +28,48 @@ function Home() {
     },
   ];
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      try {
+        element.scrollIntoView({ behavior: 'smooth' });
+      } catch (_error) {
+        // Fallback to instant scroll if smooth scrolling fails
+        element.scrollIntoView();
+      }
+    } else {
+      console.warn(`scrollToSection: Element with id '${sectionId}' not found.`);
+    }
+  };
+
   return (
     <>
       <section id="hero" className="text-center py-32">
         <h2 className="text-4xl font-bold text-neutral-900">My Portfolio</h2>
         <p className="mt-2 text-neutral-600">IT IS A FREELANCE ENGINEER'S PORTFOLIO SITE.</p>
+        <p className="mt-6 text-xl text-neutral-700">
+          <span className="block">あなたのビジネスを加速させる、</span>
+          <span className="block">クオリティの高いWebソリューション</span>
+        </p>
+        <div className="mt-8 flex gap-4 justify-center">
+          <Button 
+            size="lg" 
+            onClick={() => scrollToSection('samples')}
+            className="shadow-lg hover:shadow-xl"
+            aria-label="作品セクションにスクロールします"
+          >
+            作品を見る
+          </Button>
+          <Button 
+            size="lg" 
+            variant="outline"
+            onClick={() => scrollToSection('contact')}
+            className="shadow-lg hover:shadow-xl"
+            aria-label="お問い合わせセクションにスクロールします"
+          >
+            お問い合わせ
+          </Button>
+        </div>
       </section>
       <section id="about" className="p-10 bg-white rounded-lg mx-4 mt-6 shadow-md border border-neutral-200">
         <h2 className="text-3xl font-semibold text-neutral-900">About Me</h2>

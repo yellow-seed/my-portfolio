@@ -37,6 +37,8 @@ function Home() {
         // Fallback to instant scroll if smooth scrolling fails
         element.scrollIntoView();
       }
+    } else {
+      console.warn(`scrollToSection: Element with id '${sectionId}' not found.`);
     }
   };
 
@@ -49,7 +51,7 @@ function Home() {
           <span className="block">あなたのビジネスを加速させる、</span>
           <span className="block">クオリティの高いWebソリューション</span>
         </p>
-        <div className="mt-8 flex gap-4 justify-center">
+        <nav className="mt-8 flex gap-4 justify-center" aria-label="Hero call-to-action buttons">
           <Button 
             size="lg" 
             onClick={() => scrollToSection('samples')}
@@ -67,7 +69,7 @@ function Home() {
           >
             お問い合わせ
           </Button>
-        </div>
+        </nav>
       </section>
       <section id="about" className="p-10 bg-white rounded-lg mx-4 mt-6 shadow-md border border-neutral-200">
         <h2 className="text-3xl font-semibold text-neutral-900">About Me</h2>

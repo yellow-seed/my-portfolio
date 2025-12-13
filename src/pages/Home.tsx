@@ -51,7 +51,7 @@ function Home() {
           <span className="block">あなたのビジネスを加速させる、</span>
           <span className="block">クオリティの高いWebソリューション</span>
         </p>
-        <nav className="mt-8 flex gap-4 justify-center" aria-label="Hero call-to-action buttons">
+        <div className="mt-8 flex gap-4 justify-center">
           <Button 
             size="lg" 
             onClick={() => scrollToSection('samples')}
@@ -69,7 +69,7 @@ function Home() {
           >
             お問い合わせ
           </Button>
-        </nav>
+        </div>
       </section>
       <section id="about" className="p-10 bg-white rounded-lg mx-4 mt-6 shadow-md border border-neutral-200">
         <h2 className="text-3xl font-semibold text-neutral-900">About Me</h2>

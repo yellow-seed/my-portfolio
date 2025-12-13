@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import RestaurantImage from '../assets/image_rastaurant.png';
 import BeautySalonImage from '../assets/image_hairsalon.png';
@@ -30,8 +31,34 @@ function Home() {
   return (
     <>
       <section id="hero" className="text-center py-32">
-        <h2 className="text-4xl font-bold text-neutral-900">My Portfolio</h2>
-        <p className="mt-2 text-neutral-600">IT IS A FREELANCE ENGINEER'S PORTFOLIO SITE.</p>
+        <h2 className="text-4xl font-bold text-neutral-900 mb-4">My Portfolio</h2>
+        <p className="text-lg text-neutral-600 mb-2">あなたのビジネスを加速させる</p>
+        <p className="text-2xl font-semibold text-primary-500 mb-8">魅力的なWebサイトを作ります</p>
+        <div className="flex gap-4 justify-center">
+          <Button 
+            size="lg"
+            onClick={() => {
+              const element = document.getElementById('samples');
+              element?.scrollIntoView({ behavior: 'smooth' });
+              // Focus the target section after scroll for accessibility
+              setTimeout(() => element?.focus(), 500);
+            }}
+          >
+            作品を見る
+          </Button>
+          <Button 
+            variant="outline"
+            size="lg"
+            onClick={() => {
+              const element = document.getElementById('contact');
+              element?.scrollIntoView({ behavior: 'smooth' });
+              // Focus the target section after scroll for accessibility
+              setTimeout(() => element?.focus(), 500);
+            }}
+          >
+            お問い合わせ
+          </Button>
+        </div>
       </section>
       <section id="about" className="p-10 bg-white rounded-lg mx-4 mt-6 shadow-md border border-neutral-200">
         <h2 className="text-3xl font-semibold text-neutral-900">About Me</h2>
@@ -41,7 +68,7 @@ function Home() {
         <h2 className="text-3xl font-semibold text-neutral-900">Works</h2>
         <p className="mt-2 text-neutral-600">今後、実際の作品を追加予定です。</p>
       </section>
-      <section id="samples" className="p-10 mx-4 mt-6">
+      <section id="samples" className="p-10 mx-4 mt-6" tabIndex={-1}>
         <h2 className="text-3xl font-semibold text-neutral-900">Samples</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
           {portfolios.map((portfolio, index) => (
@@ -57,7 +84,7 @@ function Home() {
           ))}
         </div>
       </section>
-      <section id="contact" className="p-10 bg-white mx-4 mt-6 text-center shadow-md rounded-lg border border-neutral-200">
+      <section id="contact" className="p-10 bg-white mx-4 mt-6 text-center shadow-md rounded-lg border border-neutral-200" tabIndex={-1}>
         <h2 className="text-3xl font-semibold text-neutral-900">Contact</h2>
         <p className="mt-2 text-neutral-600">お問い合わせはこちら</p>
       </section>

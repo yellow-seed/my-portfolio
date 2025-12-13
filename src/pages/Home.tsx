@@ -37,14 +37,24 @@ function Home() {
         <div className="flex gap-4 justify-center">
           <Button 
             size="lg"
-            onClick={() => document.getElementById('samples')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => {
+              const element = document.getElementById('samples');
+              element?.scrollIntoView({ behavior: 'smooth' });
+              // Focus the target section after scroll for accessibility
+              setTimeout(() => element?.focus(), 500);
+            }}
           >
             作品を見る
           </Button>
           <Button 
             variant="outline"
             size="lg"
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => {
+              const element = document.getElementById('contact');
+              element?.scrollIntoView({ behavior: 'smooth' });
+              // Focus the target section after scroll for accessibility
+              setTimeout(() => element?.focus(), 500);
+            }}
           >
             お問い合わせ
           </Button>
@@ -58,7 +68,7 @@ function Home() {
         <h2 className="text-3xl font-semibold text-neutral-900">Works</h2>
         <p className="mt-2 text-neutral-600">今後、実際の作品を追加予定です。</p>
       </section>
-      <section id="samples" className="p-10 mx-4 mt-6">
+      <section id="samples" className="p-10 mx-4 mt-6" tabIndex={-1}>
         <h2 className="text-3xl font-semibold text-neutral-900">Samples</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
           {portfolios.map((portfolio, index) => (
@@ -74,7 +84,7 @@ function Home() {
           ))}
         </div>
       </section>
-      <section id="contact" className="p-10 bg-white mx-4 mt-6 text-center shadow-md rounded-lg border border-neutral-200">
+      <section id="contact" className="p-10 bg-white mx-4 mt-6 text-center shadow-md rounded-lg border border-neutral-200" tabIndex={-1}>
         <h2 className="text-3xl font-semibold text-neutral-900">Contact</h2>
         <p className="mt-2 text-neutral-600">お問い合わせはこちら</p>
       </section>

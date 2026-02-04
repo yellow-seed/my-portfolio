@@ -1,0 +1,25 @@
+services:
+  dev:
+    build:
+      context: .
+      target: dev
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+    command: sh -c "pnpm install && pnpm dev --host 0.0.0.0"
+
+  storybook:
+    build:
+      context: .
+      target: dev
+    ports:
+      - "6006:6006"
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+    command: sh -c "pnpm install && pnpm storybook --host 0.0.0.0 --port 6006"
+
+volumes:
+  node_modules:

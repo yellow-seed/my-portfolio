@@ -88,6 +88,28 @@ cd my-portfolio
 pnpm install
 ```
 
+### Docker 環境のセットアップ
+
+Docker を使用してローカル開発環境を構築できます。Node.js や pnpm のバージョン差異を気にせずに動作します。
+
+```bash
+# 開発サーバーの起動
+docker compose up dev
+
+# Storybook の起動
+docker compose up storybook
+
+# 両方同時に起動
+docker compose up
+```
+
+コンテナ内でコマンドを実行する場合：
+
+```bash
+docker compose exec dev pnpm run lint
+docker compose exec dev pnpm run build
+```
+
 ## 開発
 
 ### 開発サーバーの起動

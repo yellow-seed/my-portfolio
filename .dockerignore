@@ -1,0 +1,10 @@
+node_modules
+dist
+storybook-static
+coverage
+.git
+.github
+.DS_Store
+.env
+.env.*
+*.log

@@ -6,24 +6,23 @@ on:
 jobs:
   copilot-setup-steps:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v6
+      - name: Checkout code
+        uses: actions/checkout@v6
 
-    - name: Setup
-      uses: ./.github/actions/setup
+      - name: Setup development tools
+        run: |
+          echo "Installing shell linting tools..."
+          bash scripts/install-tools.sh
 
-    - name: Display Node.js version
-      run: node --version
+      - name: Verify environment setup
+        run: |
+          echo "Verifying shell linting tools..."
+          shellcheck --version
+          shfmt --version
+          actionlint --version
 
-    - name: Display pnpm version
-      run: pnpm --version
-
-    - name: List installed packages
-      run: pnpm list --depth=0
-
-    - name: Setup complete
-      run: echo "Development environment setup complete for GitHub Copilot"
+      - name: Run shell script linting
+        run: |
+          echo "Running shell linting checks..."
+          bash scripts/lint-shell.sh

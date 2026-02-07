@@ -25,6 +25,7 @@ React + TypeScript + Vite で構築されたポートフォリオサイトです
 | リンク | 説明 |
 |--------|------|
 | [Storybook](https://yellow-seed.github.io/my-portfolio/) | コンポーネントカタログ |
+| [Production](https://my-portfolio.yellow-seed.workers.dev) | デプロイ済みのポートフォリオ |
 
 ## 概要
 

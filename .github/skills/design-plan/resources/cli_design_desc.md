@@ -98,8 +98,8 @@ Processing input.txt...
 
 - Found 100 items
 - Processed 100 items
-  Done. Output written to output.txt
-  \`\`\`
+Done. Output written to output.txt
+\`\`\`
 
 ### 詳細モード出力
 

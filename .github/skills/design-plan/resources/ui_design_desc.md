@@ -345,19 +345,19 @@ UI Update
 ### ブレークポイント
 
 \`\`\`css
-/_ Mobile _/
+/* Mobile */
 @media (max-width: 767px) {
-/_ モバイル専用スタイル _/
+/* モバイル専用スタイル */
 }
 
-/_ Tablet _/
+/* Tablet */
 @media (min-width: 768px) and (max-width: 1023px) {
-/_ タブレット専用スタイル _/
+/* タブレット専用スタイル */
 }
 
-/_ Desktop _/
+/* Desktop */
 @media (min-width: 1024px) {
-/_ デスクトップ専用スタイル _/
+/* デスクトップ専用スタイル */
 }
 \`\`\`
 
@@ -435,7 +435,7 @@ return (
       aria-modal="true"
       tabIndex={-1}
     >
-{/_ モーダルコンテンツ _/}
+{/* モーダルコンテンツ */}
 </div>
 );
 };
@@ -528,7 +528,7 @@ const handleClick = useCallback(() => {
 // 処理
 }, []);
 
-return <div>{/_ ... _/}</div>;
+return <div>{/* ... */}</div>;
 });
 \`\`\`
 

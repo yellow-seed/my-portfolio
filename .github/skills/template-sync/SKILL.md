@@ -588,7 +588,7 @@ git remote remove template
 - yellow-seed/template の `.gitignore`: 複数の新規エントリ
 
 **現在の.gitignore**:
-```
+```text
 
 node_modules/
 .env
@@ -597,7 +597,7 @@ dist/
 ```
 
 **yellow-seed/template の .gitignore**:
-```
+```text
 
 # Node
 

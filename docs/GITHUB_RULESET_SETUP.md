@@ -93,11 +93,7 @@ chmod +x .github/scripts/setup-branch-auto-delete.sh
 {
   "conditions": {
     "ref_name": {
-      "include": [
-        "main",
-        "develop",
-        "release/*"
-      ]
+      "include": ["main", "develop", "release/*"]
     }
   }
 }
@@ -111,7 +107,7 @@ chmod +x .github/scripts/setup-branch-auto-delete.sh
     {
       "type": "pull_request",
       "parameters": {
-        "required_approving_review_count": 2  // 2名以上の承認を必須にする
+        "required_approving_review_count": 2 // 2名以上の承認を必須にする
       }
     }
   ]
@@ -124,9 +120,9 @@ chmod +x .github/scripts/setup-branch-auto-delete.sh
 {
   "bypass_actors": [
     {
-      "actor_id": 123456,  // チームIDまたはユーザーID
-      "actor_type": "Team",  // Team, Integration, OrganizationAdmin
-      "bypass_mode": "always"  // always, pull_request
+      "actor_id": 123456, // チームIDまたはユーザーID
+      "actor_type": "Team", // Team, Integration, OrganizationAdmin
+      "bypass_mode": "always" // always, pull_request
     }
   ]
 }

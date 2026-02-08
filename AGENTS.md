@@ -59,6 +59,7 @@ bash .claude/hooks/skills-setup.sh
 このスクリプトは`.github/skills`を`.claude/skills`と`.codex/skills`にコピーします。
 
 **注意事項**:
+
 - シンボリックリンク環境では、すべてのディレクトリは自動的に同期されます
 - コピー環境では、`.github/skills`を変更した場合、再度`skills-setup.sh`を実行して同期する必要があります
 - 新しいスキルを追加する際は、必ず`.github/skills/`に配置してください

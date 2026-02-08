@@ -9,9 +9,7 @@
 
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": ["./src/*"]
     },
 
     /* Bundler mode */
@@ -30,8 +28,5 @@
     "noUncheckedSideEffectImports": true
   },
   "include": ["src"],
-  "exclude": [
-    "src/**/*.stories.*",
-    "src/stories/**/*"
-  ]
+  "exclude": ["src/**/*.stories.*", "src/stories/**/*"]
 }

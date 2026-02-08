@@ -30,47 +30,47 @@ var(--color-brand)
 
 柔らかいコーラル・ピーチトーンです。
 
-```tsx
-bg - secondary - 500; // #E8825E
+```text
+bg-secondary-500  // #E8825E
 ```
 
 ### Neutral Colors (ニュートラル)
 
 温かみのあるグレースケールです。テキストや背景に最適です。
 
-```tsx
-text - neutral - 900; // メインテキスト #1C1917
-text - neutral - 600; // サブテキスト #57534E
-bg - neutral - 50; // 背景 #FAFAF9
-border - neutral - 200; // ボーダー #E7E5E4
+```text
+text-neutral-900   // メインテキスト #1C1917
+text-neutral-600   // サブテキスト #57534E
+bg-neutral-50      // 背景 #FAFAF9
+border-neutral-200 // ボーダー #E7E5E4
 ```
 
 ### Accent Colors (アクセント)
 
 補色のブルートーンです。リンクやアクションに使用します。
 
-```tsx
-bg - accent - 500; // #0EA5E9
+```text
+bg-accent-500  // #0EA5E9
 ```
 
 ### Semantic Colors (意味的な色)
 
 #### Success (成功)
 
-```tsx
-bg - success - 500; // #22C55E
+```text
+bg-success-500  // #22C55E
 ```
 
 #### Warning (警告)
 
-```tsx
-bg - warning - 500; // #F59E0B
+```text
+bg-warning-500  // #F59E0B
 ```
 
 #### Error (エラー)
 
-```tsx
-bg - error - 500; // #EF4444
+```text
+bg-error-500  // #EF4444
 ```
 
 ## 使用方法

@@ -105,11 +105,12 @@ fi
 
 chmod +x "$LOCAL_BIN/gh"
 
-export PATH="$LOCAL_BIN:$PATH"
-
-if [ -n "${ENV_FILE:-}" ]; then
-  echo "export PATH=\"$LOCAL_BIN:\$PATH\"" >>"$ENV_FILE"
-  log "PATH persisted to ENV_FILE"
+if [[ ":$PATH:" != *":$LOCAL_BIN:"* ]]; then
+  export PATH="$LOCAL_BIN:$PATH"
+  if [ -n "${ENV_FILE:-}" ]; then
+    echo "export PATH=\"$LOCAL_BIN:\$PATH\"" >>"$ENV_FILE"
+    log "PATH persisted to ENV_FILE"
+  fi
 fi
 
 log "gh CLI installed successfully: $($LOCAL_BIN/gh --version | head -1)"

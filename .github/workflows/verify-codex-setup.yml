@@ -10,7 +10,9 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Run codex-setup.sh
-        run: bash .codex/hooks/codex-setup.sh
+        run: |
+          export CODEX_ENV_FILE="$GITHUB_ENV"
+          bash .codex/hooks/codex-setup.sh
 
       - name: Verify installed tools
         run: |

@@ -60,7 +60,7 @@
 │ └→ 設定画面
 ├→ 検索画面
 │ └→ 検索結果画面
-│ └→ 詳細画面
+│     └→ 詳細画面
 └→ 通知画面
 \`\`\`
 
@@ -330,7 +330,7 @@ useNativeDriver: true,
 }).start();
 
 <Animated.View style={{ opacity: fadeAnim }}>
-{/_ コンテンツ _/}
+{/* コンテンツ */}
 </Animated.View>
 \`\`\`
 

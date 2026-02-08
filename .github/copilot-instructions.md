@@ -1,1 +1,1 @@
-../AGENTS.md
+Use the coding and collaboration guidelines defined for this repository. When generating code, prefer clear, well-documented solutions and follow existing patterns you see in the codebase. For additional human-readable context, see AGENTS.md at the repository root.

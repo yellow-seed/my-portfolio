@@ -124,7 +124,7 @@ install_shellcheck() {
 
   local temp_dir
   temp_dir=$(mktemp -d)
-  trap 'rm -rf "$temp_dir"' EXIT
+  trap 'rm -rf "$temp_dir"' RETURN
 
   local archive="shellcheck-v${SHELLCHECK_VERSION}.linux.${SHELLCHECK_ARCH}.tar.xz"
   local url="https://github.com/koalaman/shellcheck/releases/download/v${SHELLCHECK_VERSION}/${archive}"
@@ -160,7 +160,7 @@ install_go() {
   log "Installing Go ${GO_VERSION}..."
   local temp_dir
   temp_dir=$(mktemp -d)
-  trap 'rm -rf "$temp_dir"' EXIT
+  trap 'rm -rf "$temp_dir"' RETURN
 
   local tarball="go${GO_VERSION}.linux-${GO_ARCH}.tar.gz"
   local url="https://go.dev/dl/${tarball}"
@@ -313,7 +313,8 @@ main() {
   ensure_path
 
   if ! detect_arch; then
-    return 0
+    log "Skipping tool installation on unsupported architecture"
+    return 1
   fi
 
   install_shellcheck

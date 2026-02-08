@@ -3,3 +3,8 @@ coverage
 build
 dist
 pnpm-lock.yaml
+
+# Skills/design resources contain escaped code blocks with CSS/JSX comments
+# that Prettier incorrectly reformats (e.g. /* */ -> /_ _/)
+.github/skills/design-plan/resources/
+.github/skills/template-sync/SKILL.md

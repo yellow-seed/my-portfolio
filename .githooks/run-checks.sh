@@ -54,10 +54,10 @@ fi
 if "$has_docs"; then
   log "Running document checks..."
   if [ ! -x "$REPO_ROOT/node_modules/.bin/prettier" ]; then
-    log "Prettier is not installed. Run 'npm ci' to install dependencies."
+    log "Prettier is not installed. Run 'pnpm install' to install dependencies."
     exit 1
   fi
-  npm run format:check
+  pnpm run format:check
   checked=true
 fi
 

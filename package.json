@@ -7,6 +7,10 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
+    "format:check": "prettier --check \"**/*.{md,yml,yaml,json}\"",
+    "format:json": "prettier --check \"**/*.json\"",
+    "format:md": "prettier --check \"**/*.md\"",
+    "format:yaml": "prettier --check \"**/*.{yml,yaml}\"",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
@@ -47,6 +51,7 @@
     "eslint-plugin-storybook": "^10.0.0",
     "globals": "^15.14.0",
     "playwright": "^1.56.1",
+    "prettier": "^3.5.3",
     "postcss": "^8.5.2",
     "storybook": "^10.1.10",
     "tailwindcss": "^3.4.17",

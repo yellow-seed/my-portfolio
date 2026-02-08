@@ -10,20 +10,20 @@ jobs:
       contents: read
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v6
+      - name: Checkout code
+        uses: actions/checkout@v6
 
-    - name: Setup
-      uses: ./.github/actions/setup
+      - name: Setup
+        uses: ./.github/actions/setup
 
-    - name: Display Node.js version
-      run: node --version
+      - name: Display Node.js version
+        run: node --version
 
-    - name: Display pnpm version
-      run: pnpm --version
+      - name: Display pnpm version
+        run: pnpm --version
 
-    - name: List installed packages
-      run: pnpm list --depth=0
+      - name: List installed packages
+        run: pnpm list --depth=0
 
-    - name: Setup complete
-      run: echo "Development environment setup complete for GitHub Copilot"
+      - name: Setup complete
+        run: echo "Development environment setup complete for GitHub Copilot"

@@ -12,6 +12,7 @@
 ## カラーパレット
 
 ### Primary Colors (メインブランドカラー)
+
 Claudeの象徴的な温かみのあるオレンジ色です。
 
 ```tsx
@@ -26,44 +27,50 @@ var(--color-brand)
 ```
 
 ### Secondary Colors (セカンダリー)
+
 柔らかいコーラル・ピーチトーンです。
 
 ```tsx
-bg-secondary-500  // #E8825E
+bg - secondary - 500; // #E8825E
 ```
 
 ### Neutral Colors (ニュートラル)
+
 温かみのあるグレースケールです。テキストや背景に最適です。
 
 ```tsx
-text-neutral-900  // メインテキスト #1C1917
-text-neutral-600  // サブテキスト #57534E
-bg-neutral-50     // 背景 #FAFAF9
-border-neutral-200 // ボーダー #E7E5E4
+text - neutral - 900; // メインテキスト #1C1917
+text - neutral - 600; // サブテキスト #57534E
+bg - neutral - 50; // 背景 #FAFAF9
+border - neutral - 200; // ボーダー #E7E5E4
 ```
 
 ### Accent Colors (アクセント)
+
 補色のブルートーンです。リンクやアクションに使用します。
 
 ```tsx
-bg-accent-500  // #0EA5E9
+bg - accent - 500; // #0EA5E9
 ```
 
 ### Semantic Colors (意味的な色)
 
 #### Success (成功)
+
 ```tsx
-bg-success-500  // #22C55E
+bg - success - 500; // #22C55E
 ```
 
 #### Warning (警告)
+
 ```tsx
-bg-warning-500  // #F59E0B
+bg - warning - 500; // #F59E0B
 ```
 
 #### Error (エラー)
+
 ```tsx
-bg-error-500  // #EF4444
+bg - error - 500; // #EF4444
 ```
 
 ## 使用方法
@@ -103,7 +110,7 @@ bg-error-500  // #EF4444
 ### 3. TypeScriptで使用
 
 ```typescript
-import { colors, semanticColors } from '@/design-system/colors';
+import { colors, semanticColors } from "@/design-system/colors";
 
 // カラーコードを取得
 const brandColor = colors.primary[500]; // "#F97316"
@@ -129,14 +136,17 @@ const textColor = semanticColors.text; // "#1C1917"
 ## デザイン原則
 
 ### 1. 温かみと親しみやすさ
+
 Claudeのブランドアイデンティティに合わせ、温かみのあるオレンジとニュートラルトーンを使用しています。
 
 ### 2. 階層構造の明確化
+
 - 濃い色（900）: メインテキスト、重要な要素
 - 中間色（500-600）: ブランドカラー、アクション
 - 薄い色（100-200）: 背景、ボーダー
 
 ### 3. アクセシビリティ
+
 すべてのカラーコンビネーションはWCAG 2.1 AAレベルのコントラスト比を考慮しています。
 
 ## カスタマイズ
@@ -151,8 +161,8 @@ export const colors = {
 
   // 新しいカラースケールを追加
   tertiary: {
-    50: '#...',
-    100: '#...',
+    50: "#...",
+    100: "#...",
     // ...
   },
 } as const;
@@ -165,12 +175,14 @@ export const colors = {
 ## ベストプラクティス
 
 ### Do ✅
+
 - メインアクションにはprimary-500を使用
 - テキストにはneutralスケールを使用
 - ホバー状態では色を1-2段階濃くする
 - 重要な情報にはsemantic colors（success/warning/error）を使用
 
 ### Don't ❌
+
 - 原色（primary-500）をテキストに直接使用しない
 - 隣接する色段階を混在させない（例: 300と400を同じ要素で使う）
 - neutral以外の色を大面積の背景に使用しない

@@ -22,9 +22,9 @@ React + TypeScript + Vite で構築されたポートフォリオサイトです
 
 ## デモ・リンク
 
-| リンク | 説明 |
-|--------|------|
-| [Storybook](https://yellow-seed.github.io/my-portfolio/) | コンポーネントカタログ |
+| リンク                                                     | 説明                         |
+| ---------------------------------------------------------- | ---------------------------- |
+| [Storybook](https://yellow-seed.github.io/my-portfolio/)   | コンポーネントカタログ       |
 | [Production](https://my-portfolio.yellow-seed.workers.dev) | デプロイ済みのポートフォリオ |
 
 ## 概要
@@ -33,18 +33,18 @@ React + TypeScript + Vite で構築されたポートフォリオサイトです
 
 ## 技術スタック
 
-| カテゴリ | 技術 |
-|----------|------|
-| フレームワーク | React 19 |
-| 言語 | TypeScript |
-| ビルドツール | Vite |
-| スタイリング | Tailwind CSS |
-| UIコンポーネント | shadcn/ui |
-| ルーティング | React Router v7 |
-| コンポーネント開発 | Storybook |
-| テスト | Vitest, Playwright |
-| Linter | ESLint |
-| パッケージマネージャー | pnpm |
+| カテゴリ               | 技術               |
+| ---------------------- | ------------------ |
+| フレームワーク         | React 19           |
+| 言語                   | TypeScript         |
+| ビルドツール           | Vite               |
+| スタイリング           | Tailwind CSS       |
+| UIコンポーネント       | shadcn/ui          |
+| ルーティング           | React Router v7    |
+| コンポーネント開発     | Storybook          |
+| テスト                 | Vitest, Playwright |
+| Linter                 | ESLint             |
+| パッケージマネージャー | pnpm               |
 
 ## ディレクトリ構造
 

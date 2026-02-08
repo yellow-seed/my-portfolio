@@ -1,0 +1,66 @@
+name: Document Lint
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches:
+      [
+        main,
+        feat/*,
+        fix/*,
+        docs/*,
+        style/*,
+        refactor/*,
+        perf/*,
+        test/*,
+        chore/*,
+        copilot/*,
+        claude/*,
+      ]
+
+jobs:
+  markdown:
+    name: Markdown format check
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Setup
+        uses: ./.github/actions/setup
+
+      - name: Run Prettier (Markdown)
+        run: pnpm run format:md
+
+  yaml:
+    name: YAML format check
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Setup
+        uses: ./.github/actions/setup
+
+      - name: Run Prettier (YAML)
+        run: pnpm run format:yaml
+
+  json:
+    name: JSON format check
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Setup
+        uses: ./.github/actions/setup
+
+      - name: Run Prettier (JSON)
+        run: pnpm run format:json
